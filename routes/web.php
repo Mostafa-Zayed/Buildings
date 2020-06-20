@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index');
+
+Auth::routes();
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('posts', 'PostController@index');
+//Route::get('dtable-posts/destroy/{id}', 'dtable\PostController@destroy');
